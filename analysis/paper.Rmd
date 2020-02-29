@@ -1,0 +1,108 @@
+---
+title: "Replication Project"
+author: "Bianca Zlavog, Iacopo Garizio, Advika Battini, James Lee"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+bibliography: bibliography.bib
+output: bookdown::word_document2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      collapse=TRUE,
+                      message=FALSE,
+                      warning = FALSE,
+                      results = "hide"
+                      )
+knitr::opts_knit$set(root.dir = "../")
+
+knitr::read_chunk("F2_001_GenerateFigure2Data.do")
+knitr::read_chunk("F2_002_MakeFigure2.R")
+knitr::read_chunk("F2_003_MakeFigure2aspdf.R")
+knitr::read_chunk("F3_001_GenerateBootstrapData.do")
+knitr::read_chunk("F3_002_getTemperatureChange.R")
+knitr::read_chunk("F3_003_ComputeMainProjections.R")
+knitr::read_chunk("F3_004_MakeFigure3.R")
+```
+## Introduction
+The chosen article, [@burke2015global], seeks to model the relationship between gross domestic product per capita and climate change. Prior works [@dell2012temperature]  have analysed the dependence of various economic production components on temperature at a micro-level. These works have also hypothesized that the micro-level observations do not translate to macro level changes in wealthy economies. In this paper, the authors attempt to connect the micro and macro-level analyses across rich and poor nations, discovering a non-linear relationship between climate variables such as temperature and precipitation with economic growth. The authors predict a 23% decrease in global economic output by 2100 given “business-as-usual” emissions scenarios, relative to forecasts without climate change. Also of interest is the disproportionate negative economic impacts on lower-income countries which are typically warmer, compared to high-income countries which have lower temperatures; the authors predict slight economic gains for the wealthiest 20% of countries, in contrast with decreases of 75% for the poorest 40% of countries.
+
+The following analysis replicates figures 2 and 3 from the paper. The first of these depicts the non-linear relationship between global temperatures and change in gross domestic product per capita, with incomes peaking around 13 degrees Celsius. This figure also points out where some of the major countries are located on this curve, and how population and economic output are distributed at various levels of temperature.
+The figure also depicts the abovementioned relationship for rich and poor countries. Countries with GDP less than the 50th percentile are grouped in the poor bracket. 
+
+The second figure demonstrates how scenarios of large temperature increases with high economic growth will impact the projected GDP per capita of countries around the world, particularly resulting in a wider distribution than in scenarios without climate change, and disproportionately affecting lower-income countries.
+
+## Reproducibility of the original results
+As a preliminary step, we tried reproducing the same figures and results that the authors provide in the paper. Using the author's publicly available code and suggested procedures [@burke2015globalCode], we managed to obtain the same general shape of Figures 2 and 3 listed in the paper. Nevertheless, some minor details (mainly legends and texts) were missing. These details are merely aesthetical or informative and do not interfere with the general conclusions of the study.
+
+## Analysis process and variations
+
+### Country classification definition
+The paper, being consistent with "Climate change and economic growth: evidence from the last half century" [@dell2008climate], groups countries as rich and poor based on the 50th percentile of GDP at purchasing power parity (PPP). The implication of this classification has some effect on the assumptions the paper makes, so we will use an income classification threshold based on World Bank data [@wb2019classification]. We used the World Bank classifications of "low income" and "upper middle income" to recalculate the percentile that defines poor countries. The new percentile calculated is 42.  
+Given the similar curves of GDP per capita in response to a change in annual average temperatures for rich and poor countries, this change should not have a high impact on the main conclusions of the paper.
+
+### Bootstrap randomization
+To replicate the same figures from the paper, the author uses a seed for each bootstrap regression. To verify that the seed was not causing the process to generate non-representative results, we changed it to a new value. In a robust and well-performed simulation and estimation, the seed chosen should not have a noticeable impact on the conclusions.
+
+```{r runfig2pdf}
+
+ generate_fig_2 <-function(){
+   <<runfig2pdf>>
+ }
+
+generate_fig_2()
+```
+
+
+
+## Figures obtained
+```{r, echo=FALSE, message=FALSE, eval=FALSE}
+library(Statamarkdown)
+```
+
+```{stata prepfig2, collectcode=TRUE, echo = FALSE, error=TRUE}
+
+```
+
+```{r runfig2,echo=FALSE, fig.width=8, fig.height=4.5, fig.cap="Effect of annual average temperature on economic production.", fig.align='center'}
+
+```
+
+\newline
+
+
+Figure 1a shows the global non-linear relationship between annual average temperature and change in log gross domestic product (GDP) per capita during 1960–2010 with a 90% confidence interval. Histograms show global distribution of temperature exposure (red), population (grey), and income (black). 
+Figure 1b, compares rich (above 42 percentile, red) and poor (below 42 percentile, blue) countries. 
+Histograms show the distribution of country–year observations. 
+Figure 1c, compares early (1960– 1989) and late (1990–2010) subsamples (all countries). 
+Figure 1d, is the same plot as figure c but divided into agricultural and non-agricultural sectors/industries.
+
+From the figure and results obtained, it is clear that the same nonlinear relation between average temperature and gross domestic product (per capita). The conclusions from the original text are maintained.
+
+```{stata prepfig3, collectcode=TRUE, echo = FALSE, error=TRUE}
+
+```
+
+```{r gettemp,echo = FALSE}
+
+```
+
+```{r compproj,echo = FALSE}
+
+```
+
+
+```{r runfig3,echo=FALSE, fig.cap="Country-level income projections with and without temperature effects of climate change with SSP5 on the left and SSP3 on the right", fig.align='center'}
+
+```
+
+\newline
+
+Figure 2, displays the projections for the year 2100 for the two scenarios,‘business as usual’ and climate change. Figure 2a, SSP5 assumes high baseline growth and fast income convergence. Figure 2b, SSP3 assumes low baseline growth and slow convergence. Each panel center is the year 2010 and each line is a projection of national income for a country. 
+
+The country-level income projections for the year 2100 also show a nearly identical distribution of values for both scenarios (with and without climate change). The conclusions of this part are the same as the original paper.
+
+### Conclusions
+We have shown there is substantial evidence for the replication of the authors' results in figures 2 and 3 of the paper. The original figures from the paper were reproducible with relative ease. Furthermore, we were able to modify the classification percentiles of rich and poor countries as well as the seed in the bootstrapping process and still observe nonlinear effects of temperature on economic output in both rich and poor countries. These modifications did not produce large changes to the results obtained or the output figures, indicating that the methods used by the original authors were fairly robust.
+
+# References cited
+
