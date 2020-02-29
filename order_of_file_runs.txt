@@ -1,0 +1,11 @@
+Order to run files:
+
+To generate Figure 2, the user needs to run
+1.  GenerateFigure2Data.do
+2.  MakeFigure2.R
+
+To generate Figure 3 or 4, the user needs to run:
+3.  GenerateBootstrapData.do
+4.  GetTemperatureChange.R  
+5.  ComputeMainProjections.R
+6.  And then run the desired MakeFigure3.R or MakeFigure4.R
