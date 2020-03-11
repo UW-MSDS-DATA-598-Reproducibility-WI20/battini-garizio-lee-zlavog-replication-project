@@ -2,6 +2,9 @@
 ## Modeling the Non-linear Effect of Temperature on Economic Production
 ### University of Washington, DATA 598A Winter 2020
 
+<!-- badges: start -->
+[![Launch Rstudio Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UW-MSDS-DATA-598-Reproducibility-WI20/battini-garizio-lee-zlavog-replication-project/master?urlpath=rstudio)
+<!-- badges: end -->
 
 # Contributors:
 [Bianca Zlavog](https://github.com/zlavogb) [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0001-6868-7265)
