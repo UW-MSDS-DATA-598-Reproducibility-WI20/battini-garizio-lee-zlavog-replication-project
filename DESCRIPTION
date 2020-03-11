@@ -31,8 +31,8 @@ Depends:
   R (>= 3.6.1)
 Roxygen: list(markdown = TRUE)
 Imports:
-    bookdown (>= 0.17),
-    knitr (>= 1.28),
+    bookdown,
+    knitr,
     pacman (>= 0.5.1)
 RoxygenNote: 7.0.2
 Suggests: 
