@@ -3,6 +3,7 @@
 ### University of Washington, DATA 598A Winter 2020
 
 <!-- badges: start -->
+[![R build status](https://github.com/UW-MSDS-DATA-598-Reproducibility-WI20/battini-garizio-lee-zlavog-replication-project/tests/workflows/R-CMD-check/badge.svg)]
 [![Launch Rstudio Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UW-MSDS-DATA-598-Reproducibility-WI20/battini-garizio-lee-zlavog-replication-project/master?urlpath=rstudio)
 <!-- badges: end -->
 
