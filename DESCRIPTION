@@ -9,17 +9,17 @@ Authors@R:
            comment = c(ORCID = "0000-0003-1801-6484")),
     person(given = "Iacopo",
            family = "Garizio",
-           role = c("aut", "cre"),
+           role = c("aut"),
            email = "igarizio@uw.edu",
            comment = c(ORCID = "0000-0002-8431-516X")),
     person(given = "James",
            family = "Lee",
-           role = c("aut", "cre"),
+           role = c("aut"),
            email = "jlee0920@uw.edu",
            comment = c(ORCID = "0000-0002-5377-8284")),
     person(given = "Bianca",
            family = "Zlavog",
-           role = c("aut", "cre"),
+           role = c("aut"),
            email = "zlavogb@uw.edu",
            comment = c(ORCID = "0000-0001-6868-7265")))
 Description: What the package does (one paragraph).
@@ -30,7 +30,10 @@ LazyData: true
 Depends: 
   R (>= 3.6.1)
 Roxygen: list(markdown = TRUE)
-Imports:,
+Imports:
     bookdown (>= 0.17),
     knitr (>= 1.28),
     pacman (>= 0.5.1)
+RoxygenNote: 7.0.2
+Suggests: 
+    testthat (>= 2.1.0)
