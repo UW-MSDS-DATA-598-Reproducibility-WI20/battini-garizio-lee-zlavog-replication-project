@@ -28,7 +28,7 @@ License: `use_mit_license()`, `use_gpl3_license()` or friends to
 Encoding: UTF-8
 LazyData: true
 Depends: 
-  R (>= 3.6.1)
+  R (>= 3.6.2)
 Roxygen: list(markdown = TRUE)
 Imports:
     bookdown,
