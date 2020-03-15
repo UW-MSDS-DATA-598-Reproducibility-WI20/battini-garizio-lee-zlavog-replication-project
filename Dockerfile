@@ -4,7 +4,7 @@ FROM rocker/geospatial:3.6.1
 # required
 MAINTAINER Your Name <your_email@somewhere.com>
 
-COPY . /battini-garizio-lee-zlavog-replication-project
+COPY . /compendium
 
 # go into the repo directory
 RUN . /etc/environment \
@@ -13,8 +13,8 @@ RUN . /etc/environment \
   && sudo apt-get update \
   && sudo apt-get install libudunits2-dev -y \
   # build this compendium package
-  && R -e "devtools::install('/battini-garizio-lee-zlavog-replication-project', dep=TRUE)" \
+  && R -e "devtools::install('/compendium', dep=TRUE)" \
   # render the manuscript into a docx, you'll need to edit this if you've
   # customised the location and name of your main Rmd file
-  && R -e "devtools::check('/battini-garizio-lee-zlavog-replication-project',error_on = 'error')" \
- && R -e "rmarkdown::render('/battini-garizio-lee-zlavog-replication-project/analysis/paper.Rmd')"
+  && R -e "devtools::check('/compendium',error_on = 'error')" \
+ && R -e "rmarkdown::render('/compendium/analysis/paper.Rmd')"
