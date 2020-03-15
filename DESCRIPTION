@@ -1,4 +1,4 @@
-Package: data598replication
+Package: compendium
 Title: Replication Project DATA598A
 Version: 0.0.0.9000
 Authors@R: 
@@ -33,7 +33,7 @@ Roxygen: list(markdown = TRUE)
 Imports:
     bookdown,
     knitr,
-    pacman (>= 0.5.1)
+    pacman 
 RoxygenNote: 7.0.2
 Suggests: 
     testthat (>= 2.1.0)
