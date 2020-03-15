@@ -6,7 +6,6 @@ test_that("figure_2_works", {
   if (file.exists(fn)){
     file.remove(fn)
   }
-
   generate_fig_2()
   expect_true(file_test("-f", fn))
 
