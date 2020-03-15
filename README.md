@@ -3,9 +3,10 @@
 ### University of Washington, DATA 598A Winter 2020
 
 <!-- badges: start -->
-[![R build status](https://github.com/UW-MSDS-DATA-598-Reproducibility-WI20/battini-garizio-lee-zlavog-replication-project/workflows/R-CMD-check/badge.svg)](https://github.com/UW-MSDS-DATA-598-Reproducibility-WI20/battini-garizio-lee-zlavog-replication-project/actions)
 [![Launch Rstudio Binder](http://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UW-MSDS-DATA-598-Reproducibility-WI20/battini-garizio-lee-zlavog-replication-project/master?urlpath=rstudio)
 [![R build status](https://github.com/UW-MSDS-DATA-598-Reproducibility-WI20/battini-garizio-lee-zlavog-replication-project/workflows/Docker-build/badge.svg)](https://github.com/UW-MSDS-DATA-598-Reproducibility-WI20/battini-garizio-lee-zlavog-replication-project/actions)
+  [![DOI](https://img.shields.io/badge/OSF-DOI%3A%2010.17605%2FOSF.IO%2FXXXX-brightgreen)](https://doi.org/10.17605/OSF.IO/XXXX)
+
 <!-- badges: end -->
 
 # Contributors:
