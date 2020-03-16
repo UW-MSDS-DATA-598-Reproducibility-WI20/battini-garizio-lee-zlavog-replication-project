@@ -1,4 +1,4 @@
 library(testthat)
-library(data598replication)
+library(compendium)
 
-test_check("data598replication")
+test_check("compendium")
